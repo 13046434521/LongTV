@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/module_homepage_ic_playing_01" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_02" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_03" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_04" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_05" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_06" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_07" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_08" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_09" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_010" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_011" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_012" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_013" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_014" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_015" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_016" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_017" android:duration="30"/>
+    <item android:drawable="@drawable/module_homepage_ic_playing_018" android:duration="30"/>
+</animation-list>

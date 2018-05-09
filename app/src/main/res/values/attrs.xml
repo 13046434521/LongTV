@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FailureView">
+        <attr name="FailureContent" format="string"></attr>
+        <attr name="FailureBtn" format="string"></attr>
+        <attr name="FailureSrc" format="reference"></attr>
+        <attr name="LoadingVisible" format="boolean"></attr>
+        <attr name="btnCode">
+            <flag name="quickOrder" value="0"></flag>
+            <flag name="orderManager" value="1"></flag>
+            <flag name="favorite" value="2"></flag>
+            <flag name="search" value="3"></flag>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_subscribe_item_container"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_subscribe_item_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        android:layout_margin="@dimen/live_item_margin"
+        android:scaleType="fitXY"
+        android:src="@mipmap/live_loading_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_subscribe_item_head"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:src="@mipmap/default_head_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_subscribe_item_container"
+        app:layout_constraintTop_toBottomOf="@id/iv_subscribe_item_container"
+        app:layout_constraintBottom_toBottomOf="@id/iv_subscribe_item_container"/>
+
+    <TextView
+        android:id="@+id/iv_subscribe_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_subscribe_item_container"
+        app:layout_constraintStart_toEndOf="@id/civ_subscribe_item_head"
+        app:layout_constraintBottom_toBottomOf="@id/civ_subscribe_item_head"
+        app:layout_constraintEnd_toEndOf="@id/iv_subscribe_item_container"
+        android:text=""
+        android:textColor="@color/colorGray"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/iv_subscribe_item_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@mipmap/face_live_person_icon"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toTopOf="@id/tv_subscribe_item_people"
+        app:layout_constraintBottom_toBottomOf="@id/tv_subscribe_item_people"
+        app:layout_constraintEnd_toStartOf="@id/tv_subscribe_item_people"/>
+
+    <TextView
+        android:id="@+id/tv_subscribe_item_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/live_item_margin"
+        android:lines="1"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/live_item_people"
+        app:layout_constraintBottom_toBottomOf="@id/iv_subscribe_item_container"
+        app:layout_constraintEnd_toEndOf="@id/iv_subscribe_item_container"
+        app:layout_constraintTop_toTopOf="@id/civ_subscribe_item_head" />
+
+
+    <TextView
+        android:id="@+id/tv_subscribe_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/civ_subscribe_item_head"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/civ_subscribe_item_head"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorBlack"
+        android:layout_margin="@dimen/live_item_margin"
+        android:text="震中杯"
+        android:ellipsize="end"
+        android:textSize="@dimen/live_item_title"
+        android:lines="1"/>
+</android.support.constraint.ConstraintLayout>

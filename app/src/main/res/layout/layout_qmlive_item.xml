@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_qmlive_click"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_qmlive_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/live_item_margin"
+        android:scaleType="fitXY"
+        android:src="@mipmap/quianmin_live_default"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_qmlive_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="新人主播，确认过眼神，是我打不过的人"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/live_item_title"
+        app:layout_constraintEnd_toEndOf="@id/iv_qmlive_content"
+        app:layout_constraintStart_toStartOf="@id/iv_qmlive_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_qmlive_content"/>
+
+    <ImageView
+        android:id="@+id/iv_qmlive_head"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:scaleType="centerInside"
+        android:layout_marginStart="5dp"
+        android:src="@mipmap/quanmin_homepage_ic_name"
+        app:layout_constraintBottom_toBottomOf="@id/iv_qmlive_content"
+        app:layout_constraintEnd_toStartOf="@id/tv_qmlive_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_qmlive_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="立冬大魔王"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/live_item_name"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintEnd_toStartOf="@id/iv_qmlive_people"
+        app:layout_constraintTop_toTopOf="@+id/iv_qmlive_head"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_qmlive_head"
+        app:layout_constraintStart_toEndOf="@+id/iv_qmlive_head" />
+
+    <ImageView
+        android:id="@+id/iv_qmlive_people"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/animation_quanmin"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@id/tv_qmlive_name"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_qmlive_head"
+        app:layout_constraintEnd_toStartOf="@id/tv_qmlive_people"
+        app:layout_constraintTop_toTopOf="@+id/iv_qmlive_head"/>
+
+    <TextView
+        android:id="@+id/tv_qmlive_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:lines="1"
+        android:textColor="@color/colorWhite"
+        android:text="9999"
+        android:textSize="10sp"
+        app:layout_constraintTop_toTopOf="@id/iv_qmlive_head"
+        app:layout_constraintBottom_toBottomOf="@id/iv_qmlive_head"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_qmlive_people" />
+
+</android.support.constraint.ConstraintLayout>

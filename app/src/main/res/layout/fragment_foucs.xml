@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center">
+    <com.jtl.failureview.FailureView
+        android:id="@+id/fv_foucs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:loadingVisible="false"
+        app:failureContent="登陆后才能查看更多信息~"
+        app:failureBtn="立即登录"/>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_task_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_task_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintEnd_toStartOf="@+id/tv_task_content"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@mipmap/default_head_icon" />
+
+    <TextView
+        android:id="@+id/tv_task_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:gravity="center_vertical"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_task_head"
+        app:layout_constraintEnd_toStartOf="@+id/iv_task_domain"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_task_head"
+        app:layout_constraintTop_toTopOf="@id/iv_task_head" />
+
+    <ImageView
+        android:id="@+id/iv_task_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_task_head"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_task_content"
+        app:layout_constraintTop_toTopOf="@id/iv_task_head"
+        app:srcCompat="@mipmap/get_task_no_finish" />
+</android.support.constraint.ConstraintLayout>

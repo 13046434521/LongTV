@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_navigation_height">80dp</dimen>
+<!--base-->
+    <dimen name="base_margin_top_10dp">15dp</dimen>
+    <dimen name="base_margin_top_30dp">30dp</dimen>
+    <!--live-->
+    <dimen name="live_item_title">12sp</dimen>
+    <dimen name="live_item_name">10sp</dimen>
+    <dimen name="live_item_people">10sp</dimen>
+    <dimen name="live_item_margin">5dp</dimen>
+    <!--mine-->
+    <dimen name="mine_tab_margin">10dp</dimen>
+    <!--login-->
+    <dimen name="login_font_size">14sp</dimen>
+    <!--title-->
+    <dimen name="layout_titie">50dp</dimen>
+    <dimen name="title_size">16sp</dimen>
+</resources>

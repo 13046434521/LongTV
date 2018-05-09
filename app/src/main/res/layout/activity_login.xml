@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".detail.Login.LoginActivity">
+
+    <include
+        android:id="@+id/layout_login_title"
+        layout="@layout/layout_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/fl_web_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_login_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:scaleType="centerInside"
+        android:src="@mipmap/default_head_icon"
+        app:layout_constraintBottom_toTopOf="@id/et_login_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_login_title" />
+
+    <EditText
+        android:id="@+id/et_login_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:drawablePadding="20dp"
+        android:hint="手机/邮箱/账号（5-30位字符）"
+        android:textSize="@dimen/login_font_size"
+        android:maxLength="30"
+        android:inputType="text"
+        android:drawableStart="@drawable/et_login_account"
+        app:layout_constraintBottom_toTopOf="@id/view_login_divider1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_login_default" />
+
+    <View
+        android:id="@+id/view_login_divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@color/colorLine"
+        app:layout_constraintBottom_toTopOf="@id/et_login_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_login_account" />
+
+    <EditText
+        android:id="@+id/et_login_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:hint="输入密码"
+        android:lines="1"
+        android:inputType="textPassword"
+        android:maxLength="13"
+        android:textSize="@dimen/login_font_size"
+        android:drawablePadding="20dp"
+        android:drawableStart="@drawable/et_login_password"
+        app:layout_constraintBottom_toTopOf="@id/view_login_divider2"
+        app:layout_constraintEnd_toEndOf="@id/et_login_account"
+        app:layout_constraintStart_toStartOf="@id/et_login_account"
+        app:layout_constraintTop_toBottomOf="@id/view_login_divider1" />
+
+    <View
+        android:id="@+id/view_login_divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        app:layout_constraintBottom_toTopOf="@id/tv_login_forget"
+        app:layout_constraintEnd_toEndOf="@id/view_login_divider1"
+        app:layout_constraintStart_toStartOf="@id/view_login_divider1"
+        app:layout_constraintTop_toBottomOf="@id/et_login_password" />
+
+    <TextView
+        android:id="@+id/tv_login_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="忘记密码？"
+        app:layout_constraintBottom_toTopOf="@id/btn_login_login"
+        app:layout_constraintStart_toStartOf="@id/et_login_account"
+        app:layout_constraintTop_toBottomOf="@id/view_login_divider2" />
+
+    <Button
+        android:id="@+id/btn_login_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_login_login"
+        android:text="登录"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@id/tv_login_other"
+        app:layout_constraintEnd_toEndOf="@id/et_login_account"
+        app:layout_constraintStart_toStartOf="@id/et_login_account"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_forget" />
+
+    <View
+        android:id="@+id/view_login_left"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        app:layout_constraintBottom_toBottomOf="@id/tv_login_other"
+        app:layout_constraintEnd_toStartOf="@id/tv_login_other"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_login_other" />
+
+    <TextView
+        android:id="@+id/tv_login_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="100dp"
+        android:text="其他登录方式"
+        app:layout_constraintBottom_toTopOf="@id/img_login_qq"
+        app:layout_constraintEnd_toStartOf="@id/view_login_right"
+        app:layout_constraintStart_toEndOf="@id/view_login_left"
+        app:layout_constraintTop_toBottomOf="@id/btn_login_login" />
+
+    <View
+        android:id="@+id/view_login_right"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        app:layout_constraintBottom_toBottomOf="@id/tv_login_other"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_login_other"
+        app:layout_constraintTop_toTopOf="@id/tv_login_other" />
+
+    <ImageView
+        android:id="@+id/img_login_qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_share_qq"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/img_login_wechat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_other" />
+
+    <ImageView
+        android:id="@+id/img_login_wechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_share_wechat"
+        app:layout_constraintBottom_toBottomOf="@id/img_login_qq"
+        app:layout_constraintEnd_toStartOf="@id/img_login_weibo"
+        app:layout_constraintStart_toEndOf="@id/img_login_qq"
+        app:layout_constraintTop_toTopOf="@id/img_login_qq" />
+
+    <ImageView
+        android:id="@+id/img_login_weibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/bg_share_weibo"
+        app:layout_constraintBottom_toBottomOf="@id/img_login_qq"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_login_wechat"
+        app:layout_constraintTop_toTopOf="@id/img_login_qq" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.HmChannel.HmChannelActivity">
+
+    <include
+        android:id="@+id/layout_hmchannel_title"
+        layout="@layout/layout_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/nsv_hmchannel_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv_hmchannel_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hmchannel_title">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view_hmchannel_mine"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginStart="10dp"
+                android:background="@color/colorLightRed"
+                android:paddingVertical="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_hmchannel_mine_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_hmchannel_mine_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_hmchannel_mine_title" />
+
+            <TextView
+                android:id="@+id/tv_hmchannel_mine_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="我的频道"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@id/rv_hmchannel_mine"
+                app:layout_constraintEnd_toStartOf="@+id/tv_hmchannel_mine_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/view_hmchannel_mine"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_hmchannel_mine_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="（长按即可编辑，点击跳转直播间列表）"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_hmchannel_mine_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_hmchannel_mine_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_hmchannel_mine_title" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_hmchannel_mine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toTopOf="@id/tv_hmchannel_all_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hmchannel_mine_title" />
+
+
+            <View
+                android:id="@+id/view_hmchannel_all"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginStart="10dp"
+                android:background="@color/colorLightRed"
+                android:paddingVertical="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_hmchannel_all_title"
+                app:layout_constraintEnd_toStartOf="@+id/tv_hmchannel_all_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_hmchannel_all_title" />
+
+            <TextView
+                android:id="@+id/tv_hmchannel_all_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="全部频道"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@id/rv_hmchannel_all"
+                app:layout_constraintEnd_toStartOf="@+id/tv_hmchannel_all_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/view_hmchannel_all"
+                app:layout_constraintTop_toBottomOf="@+id/rv_hmchannel_mine" />
+
+            <TextView
+                android:id="@+id/tv_hmchannel_all_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="（长按即可编辑，点击跳转直播间列表）"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_hmchannel_all_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_hmchannel_all_title"
+                app:layout_constraintTop_toTopOf="@+id/tv_hmchannel_all_title" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_hmchannel_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hmchannel_all_title" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

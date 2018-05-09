@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <include
+        android:id="@+id/layout_subscribe_title"
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.aspsine.irecyclerview.IRecyclerView
+        android:id="@+id/irv_subscribe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="false"
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
+        android:visibility="gone"/>
+
+    <com.jtl.failureview.FailureView
+        android:id="@+id/fv_subscribe_failure"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:loadingVisible="true"/>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.t.longtv">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AppAplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:resizeableActivity="false"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".detail.Splash.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".detail.Main.HomeActivity" />
+        <activity android:name=".detail.LiveDetail.LiveDetailActivity" />
+        <activity android:name=".detail.Detail.DetailActivity" />
+        <activity android:name=".detail.Web.WebActivity" />
+        <activity android:name=".detail.Login.LoginActivity" />
+        <activity android:name=".detail.Subscribe.SubscribeActivity" />
+        <activity android:name=".detail.History.HistoryActivity" />
+        <activity android:name=".detail.Task.TaskActivity" />
+        <activity android:name=".detail.Set.SetActivity" />
+        <activity android:name=".detail.Message.MessageActivity" />
+        <activity android:name=".detail.Pay.PayActivity" />
+        <activity android:name=".detail.Bill.BillActivity" />
+        <activity android:name=".detail.Fans.FansActivity" />
+        <activity android:name=".detail.Badge.BageActivity" />
+        <activity android:name=".detail.Traffic.TrafficActivity" />
+        <activity android:name=".detail.Feedback.FeedbackActivity" />
+        <activity android:name=".detail.Personal.PersonalActivity" />
+        <activity android:name=".detail.QMLiveDetail.QMLiveDetaileActivity" />
+        <activity android:name=".detail.HmChannel.HmChannelActivity"></activity>
+    </application>
+
+</manifest>
