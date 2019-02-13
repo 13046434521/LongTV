@@ -6,7 +6,7 @@ import com.t.longtv.bean.HistoryBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.Map;
 
@@ -24,10 +24,10 @@ public class HistoryPresenter extends BasePresenter<HistoryContract.View> implem
 
     @Override
     public void loadData(int page) {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                 .getHistory(getMap(String.valueOf(page)),"android")
-        ).subscribe(new DefaultApiObserveble<HistoryBean>() {
+        ).subscribe(new DefaultApiObserverble<HistoryBean>() {
             @Override
             public void onSuccess(HistoryBean historyBean) {
                 getView().loadSuccess(historyBean.getData());

@@ -10,7 +10,7 @@ import com.t.longtv.bean.LiveBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -33,8 +33,8 @@ public class LivePresenter extends BasePresenter<LiveContract.View> implements L
     @Override
     public void loadData(final int status, String gid, int page) {
         Map map = getMap(gid, page + "");
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance().create(ApiService.class)
-                .getLive(map)).subscribe(new DefaultApiObserveble<LiveBean>() {
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance().create(ApiService.class)
+                .getLive(map)).subscribe(new DefaultApiObserverble<LiveBean>() {
             @Override
             public void onSuccess(LiveBean liveBean) {
                 if (status == AppConstants.REFRESH) {

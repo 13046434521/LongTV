@@ -5,7 +5,7 @@ import com.t.longtv.bean.ParkBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,11 +22,11 @@ public class ParkPresenter extends BasePresenter <ParkContract.View>implements P
 
     @Override
     public void loadData() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance()
                 .create(ApiService.class)
                 .getPark(getMap())
-        ).subscribe(new DefaultApiObserveble< ParkBean>() {
+        ).subscribe(new DefaultApiObserverble< ParkBean>() {
             @Override
             public void onSuccess(ParkBean parkBean) {
                 if (parkBean.getData()!=null){

@@ -7,7 +7,7 @@ import com.t.longtv.bean.RecommendBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,11 +24,11 @@ public class RecommendPresenter extends BasePresenter<RecommendContract.View> im
 
     @Override
     public void loadBanner() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance()
                         .create(ApiService.class)
                         .getRecommendBanner(getBannerMap(), "android")
-        ).subscribe(new DefaultApiObserveble<BannerBean>() {
+        ).subscribe(new DefaultApiObserverble<BannerBean>() {
 
             @Override
             public void onSuccess(BannerBean bannerBean) {
@@ -49,10 +49,10 @@ public class RecommendPresenter extends BasePresenter<RecommendContract.View> im
 
     @Override
     public void loadData() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getRecommend(getMap(), "android")
-        ).subscribe(new DefaultApiObserveble<RecommendBean>() {
+        ).subscribe(new DefaultApiObserverble<RecommendBean>() {
             @Override
             public void onSuccess(RecommendBean bean) {
                 getView().getDataSuccess(bean.getData());

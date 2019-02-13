@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
-import com.squareup.leakcanary.LeakCanary;
 import com.t.longtv.bean.HMTitleBean;
 import com.t.longtv.dao.DaoMaster;
 import com.t.longtv.dao.DaoSession;
@@ -35,21 +34,21 @@ public class AppAplication extends Application {
     public void onCreate() {
         super.onCreate();
         appAplication = this;
-        initLeak();
+//        initLeak();
         initARouter();
         initLogger();
         initDB();
     }
 
-    private void initLeak(){
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
-        // Normal app init code...
-    }
+//    private void initLeak(){
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
+//        // Normal app init code...
+//    }
 
     private void initDB() {
         HmDBUtils hmDBUtils=HmDBUtils.getInstance();

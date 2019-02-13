@@ -8,7 +8,7 @@ import com.t.longtv.bean.HmChannenBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.Map;
 
@@ -24,10 +24,10 @@ public class SplashPresenter extends BasePresenter<SplashContract.View> implemen
 
     @Override
     public void loadToMain() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getHmChannel(getMap())
-        ).subscribe(new DefaultApiObserveble<HmChannenBean>() {
+        ).subscribe(new DefaultApiObserverble<HmChannenBean>() {
 
             @Override
             public void onSuccess(HmChannenBean hmChannenBean) {

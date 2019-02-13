@@ -7,7 +7,7 @@ import com.t.longtv.bean.UserLoginBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 import com.t.longtv.utils.AppUtils;
 import com.t.longtv.utils.MD5Utils;
 
@@ -30,10 +30,10 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
             AppUtils.Toast("用户名或密码为空！");
             return;
         }
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance()
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance()
                 .create(ApiService.class)
                 .getLogin(loginMap(user,password),"android"))
-                .subscribe(new DefaultApiObserveble<UserLoginBean>() {
+                .subscribe(new DefaultApiObserverble<UserLoginBean>() {
                     @Override
                     public void onSuccess(UserLoginBean userLoginBean) {
                         getView().loadSuccess(userLoginBean);

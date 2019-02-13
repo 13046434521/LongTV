@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers;
  * 描述：观察者类
  */
 public class ApiObserveble {
-    public static  <T> Observable<T> defaultMethed(Observable<T> observable){
+    public static  <T> Observable<T> defaultMethod(Observable<T> observable){
         return  observable.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .timeout(5*1000, TimeUnit.SECONDS)

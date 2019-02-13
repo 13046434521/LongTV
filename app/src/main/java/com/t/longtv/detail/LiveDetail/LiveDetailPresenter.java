@@ -7,7 +7,7 @@ import com.t.longtv.bean.LiveDetailBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -37,10 +37,10 @@ public class LiveDetailPresenter extends BasePresenter<LiveDetailContract.View> 
 
     @Override
     public void loadData(String cid) {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getLiveDetail(getMap(cid),"android")
-        ).subscribe(new DefaultApiObserveble<LiveDetailBean>() {
+        ).subscribe(new DefaultApiObserverble<LiveDetailBean>() {
             @Override
             public void onSuccess(LiveDetailBean liveDetailBean) {
                 getView().loadVideoSuccess(liveDetailBean);

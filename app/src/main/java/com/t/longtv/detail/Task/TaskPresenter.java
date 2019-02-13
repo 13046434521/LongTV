@@ -6,7 +6,7 @@ import com.t.longtv.dao.dbutils.UserDBUtils;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,10 +28,10 @@ public class TaskPresenter extends BasePresenter<TaskContract.View> implements T
 
     @Override
     public void loadData() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getTask(getMap())
-        ).subscribe(new DefaultApiObserveble<TaskBean>() {
+        ).subscribe(new DefaultApiObserverble<TaskBean>() {
             @Override
             public void onSuccess(TaskBean taskBean) {
                 getView().loadDataSuccess(taskBean.getData());

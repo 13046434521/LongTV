@@ -6,7 +6,7 @@ import com.t.longtv.bean.QmLiveBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiQmRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import io.reactivex.Observable;
 
@@ -30,7 +30,7 @@ public class QMLivePresenter extends BasePresenter<QMLiveContarct.View> implemen
             observable=ApiQmRetrofit.getInstance().create(ApiService.class).getQMLive(getSlug(title));
         }
 
-        ApiObserveble.defaultMethed(observable).subscribe(new DefaultApiObserveble<QmLiveBean>() {
+        ApiObserveble.defaultMethod(observable).subscribe(new DefaultApiObserverble<QmLiveBean>() {
             @Override
             public void onSuccess(QmLiveBean qmLiveBean) {
                 getView().loadSuccess(qmLiveBean.getData());

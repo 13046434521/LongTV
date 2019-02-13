@@ -8,7 +8,7 @@ import com.t.longtv.bean.EntertainBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,9 +31,9 @@ public class EntertainPresenter extends BasePresenter<EntertainContract.View> im
 
     @Override
     public void loadBanner() {
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance().create(ApiService.class)
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance().create(ApiService.class)
                 .getRecommendBanner(getBannerMap(), "android"))
-                .subscribe(new DefaultApiObserveble<BannerBean>() {
+                .subscribe(new DefaultApiObserverble<BannerBean>() {
                     @Override
                     public void onSuccess(BannerBean bannerBean) {
                         getView().getBannerSuccess(bannerBean);
@@ -49,8 +49,8 @@ public class EntertainPresenter extends BasePresenter<EntertainContract.View> im
     @Override
     public void loadData(final int status, int page) {
         Map map = getMap(page + "");
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance().create(ApiService.class)
-                .getEntertain(map)).subscribe(new DefaultApiObserveble<EntertainBean>() {
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance().create(ApiService.class)
+                .getEntertain(map)).subscribe(new DefaultApiObserverble<EntertainBean>() {
             @Override
             public void onSuccess(EntertainBean entertainBean) {
                 if (status == AppConstants.REFRESH) {

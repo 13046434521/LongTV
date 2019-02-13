@@ -5,7 +5,7 @@ import com.t.longtv.bean.QmLiveBean;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiQmRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 /**
  * 作者：龙昊
@@ -19,9 +19,9 @@ public class QMPresenter extends BasePresenter<QMContarct.View> implements QMCon
 
     @Override
     public void loadData() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiQmRetrofit.getInstance()
-                        .create(ApiService.class).getQMLiveAll()).subscribe(new DefaultApiObserveble<QmLiveBean>() {
+                        .create(ApiService.class).getQMLiveAll()).subscribe(new DefaultApiObserverble<QmLiveBean>() {
             @Override
             public void onSuccess(QmLiveBean qmLiveBean) {
                 getView().loadSuccess(qmLiveBean.getData());

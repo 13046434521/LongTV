@@ -62,6 +62,9 @@ public class MineBean {
         this.content=content;
         this.status=status;
     }
+
+    public MineBean(){
+    }
     
     public int getRes() {
         return res;

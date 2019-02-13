@@ -132,13 +132,13 @@ public class MineFragment extends Fragment implements MineContract.View {
         rvMineLinear.setAdapter(linearAdapter);
         rvMineLinear.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        gridList.add(new MineBean(R.mipmap.userinfo_fan_icon, "我的粉丝牌", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_badge_icon, "我的徽章", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_free_icon, "免流量", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_tv_icon, "火猫TV版", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_suggstion_icon, "帮助反馈", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_service_icon, "联系客服", GRID));
-        gridList.add(new MineBean(R.mipmap.userinfo_livepush_icon, "我要开播", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_fan_icon, "我的粉丝牌", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_badge_icon, "我的徽章", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_free_icon, "免流量", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_tv_icon, "火猫TV版", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_suggstion_icon, "帮助反馈", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_service_icon, "联系客服", GRID));
+//        gridList.add(new MineBean(R.mipmap.userinfo_livepush_icon, "我要开播", GRID));
         gridAdapter = new MineAdapter(R.layout.layout_mine_grid_item, gridList);
         rvMineGrid.setAdapter(gridAdapter);
         rvMineGrid.setLayoutManager(new GridLayoutManager(getContext(), 4));
@@ -151,14 +151,16 @@ public class MineFragment extends Fragment implements MineContract.View {
     ///////////////////////////////////////////////////////////////////////////
     @Override
     public void getModuleSuccess(List<MineModuleBean.DataBean> dataBeans) {
+        gridList.clear();
         for (int i = 0; i < dataBeans.size(); i++) {
-            MineBean mineBean = gridList.get(i);
+            MineBean mineBean = new MineBean();
             MineModuleBean.DataBean dataBean = dataBeans.get(i);
 
             mineBean.setIcon(dataBean.getIcon());
             mineBean.setUrl(dataBean.getUrl());
             mineBean.setContent(dataBean.getName());
             mineBean.setId(dataBean.getId());
+            gridList.add(mineBean);
         }
 
         gridAdapter.setNewData(gridList);
@@ -171,10 +173,12 @@ public class MineFragment extends Fragment implements MineContract.View {
 
     @Override
     public void getUserAdSuccess(final UserinfoAdBean.DataBean dataBeans) {
-        GlideApp.with(getContext())
-                .load(dataBeans.getTop().get(0).getImage_url())
-                .centerInside()
-                .into(ivAd);
+        if (dataBeans.getTop().size()!=0){
+            GlideApp.with(getContext())
+                    .load(dataBeans.getTop().get(0).getImage_url())
+                    .centerInside()
+                    .into(ivAd);
+        }
 
         ivAd.setVisibility(View.VISIBLE);
 

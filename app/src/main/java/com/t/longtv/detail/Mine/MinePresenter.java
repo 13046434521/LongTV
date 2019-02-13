@@ -9,7 +9,7 @@ import com.t.longtv.dao.dbutils.UserDBUtils;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -32,10 +32,10 @@ public class MinePresenter extends BasePresenter<MineContract.View> implements M
 
     @Override
     public void loadModule() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getMineModule(getModuleMap()))
-                .subscribe(new DefaultApiObserveble<MineModuleBean>() {
+                .subscribe(new DefaultApiObserverble<MineModuleBean>() {
 
                     @Override
                     public void onSuccess(MineModuleBean mineModuleBean) {
@@ -51,10 +51,10 @@ public class MinePresenter extends BasePresenter<MineContract.View> implements M
 
     @Override
     public void loadAD() {
-        ApiObserveble.defaultMethed(
+        ApiObserveble.defaultMethod(
                 ApiRetrofit.getInstance().create(ApiService.class)
                         .getUserAd(getAdMap("")))
-                .subscribe(new DefaultApiObserveble<UserinfoAdBean>() {
+                .subscribe(new DefaultApiObserverble<UserinfoAdBean>() {
 
                     @Override
                     public void onSuccess(UserinfoAdBean userinfoAdBean) {
@@ -70,9 +70,9 @@ public class MinePresenter extends BasePresenter<MineContract.View> implements M
 
     @Override
     public void loadUserInfo() {
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance().create(ApiService.class)
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance().create(ApiService.class)
             .getUserInfo(getUserInfoMap(),"android"))
-                .subscribe(new DefaultApiObserveble<UserInfoBean>() {
+                .subscribe(new DefaultApiObserverble<UserInfoBean>() {
                     @Override
                     public void onSuccess(UserInfoBean userInfoBean) {
                         getView().getUserInfoSuccess(userInfoBean.getData());

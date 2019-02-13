@@ -6,7 +6,7 @@ import com.t.longtv.dao.dbutils.UserDBUtils;
 import com.t.longtv.http.ApiObserveble;
 import com.t.longtv.http.ApiRetrofit;
 import com.t.longtv.http.ApiService;
-import com.t.longtv.http.DefaultApiObserveble;
+import com.t.longtv.http.DefaultApiObserverble;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,9 +24,9 @@ public class SubscribePresenter extends BasePresenter<SubscribeContract.View> im
 
     @Override
     public void loadSubscribe(int page) {
-        ApiObserveble.defaultMethed(ApiRetrofit.getInstance().create(ApiService.class)
+        ApiObserveble.defaultMethod(ApiRetrofit.getInstance().create(ApiService.class)
                 .getSubscribe(getMap(String.valueOf(page)),"android"))
-                .subscribe(new DefaultApiObserveble<SubscribeBean>() {
+                .subscribe(new DefaultApiObserverble<SubscribeBean>() {
                     @Override
                     public void onSuccess(SubscribeBean bean) {
                         getView().getSubscribeSuccess(bean.getData());
